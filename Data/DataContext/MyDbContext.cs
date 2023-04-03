@@ -1,4 +1,5 @@
 ﻿using DataLayer.Configurations;
+using DataLayer.Extensions;
 using DataLayer.ModelDB;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,6 +33,8 @@ namespace MyWebApiApp.Data
            // modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
             modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
             modelBuilder.ApplyConfiguration(new SlideConfiguration());
+
+            modelBuilder.Seed();
         }
 
         #region DbSet
