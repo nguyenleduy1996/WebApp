@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ApplicationLogic
+namespace Application
 {
     public class Class1
     {
