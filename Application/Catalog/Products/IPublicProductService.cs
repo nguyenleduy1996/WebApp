@@ -11,6 +11,8 @@ namespace Application.Catalog.Products
 {
     public   interface IPublicProductService
     {
-       Task< PagedResult<ProductViewModel> >GetAllByCategoryId(GetProductPaginRequest request);
+        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request);
+
+        Task<List<ProductViewModel>> GetAll();
     }
 }

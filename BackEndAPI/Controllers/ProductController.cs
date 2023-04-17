@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Application.Catalog.Products;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BackEndAPI.Controllers
 {
@@ -7,5 +9,17 @@ namespace BackEndAPI.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly IPublicProductService _publicProductService;
+        public ProductController(IPublicProductService publicProductService)
+        {
+            _publicProductService = publicProductService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var products = await _publicProductService.GetAll();
+            return Ok(products);
+        }
     }
 }
