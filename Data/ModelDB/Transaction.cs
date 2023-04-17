@@ -21,7 +21,7 @@ namespace DataLayer.ModelDB
 
         public Guid UserId { get; set; }
 
-       // public AppUser AppUser { get; set; }
+        public AppUser AppUser { get; set; }
 
     }
 }

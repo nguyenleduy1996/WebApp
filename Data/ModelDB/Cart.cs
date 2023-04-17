@@ -19,6 +19,6 @@ namespace DataLayer.ModelDB
 
         public DateTime DateCreated { get; set; }
 
-       // public AppUser AppUser { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }

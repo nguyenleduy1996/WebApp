@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyWebApiApp.Data;
 
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230403153933_testIdentity")]
+    partial class testIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,16 +75,6 @@ namespace DataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "a130599d-d6d7-4719-8711-7fbb8d59771a",
-                            Description = "Administrator role",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("DataLayer.ModelDB.AppUser", b =>
@@ -149,27 +141,6 @@ namespace DataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "0323dccc-0e28-4a4a-8677-3e33cf86e9fa",
-                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "tedu.international@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Toan",
-                            LastName = "Bach",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "tedu.international@gmail.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHlY6k7jCEuebMMdXJ5Ppa1i6EjBNZ0i7I8cIsKFOZ9pAjZqjrz57QID5lImghgrXQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("DataLayer.ModelDB.Cart", b =>
@@ -510,7 +481,7 @@ namespace DataLayer.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 4, 3, 22, 44, 41, 782, DateTimeKind.Local).AddTicks(3782),
+                            DateCreated = new DateTime(2023, 4, 3, 22, 39, 32, 845, DateTimeKind.Local).AddTicks(2120),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -736,68 +707,6 @@ namespace DataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Slides");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-                            Image = "/themes/images/carousel/1.png",
-                            Name = "Second Thumbnail label",
-                            SortOrder = 1,
-                            Status = 1,
-                            Url = "#"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-                            Image = "/themes/images/carousel/2.png",
-                            Name = "Second Thumbnail label",
-                            SortOrder = 2,
-                            Status = 1,
-                            Url = "#"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-                            Image = "/themes/images/carousel/3.png",
-                            Name = "Second Thumbnail label",
-                            SortOrder = 3,
-                            Status = 1,
-                            Url = "#"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-                            Image = "/themes/images/carousel/4.png",
-                            Name = "Second Thumbnail label",
-                            SortOrder = 4,
-                            Status = 1,
-                            Url = "#"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-                            Image = "/themes/images/carousel/5.png",
-                            Name = "Second Thumbnail label",
-                            SortOrder = 5,
-                            Status = 1,
-                            Url = "#"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-                            Image = "/themes/images/carousel/6.png",
-                            Name = "Second Thumbnail label",
-                            SortOrder = 6,
-                            Status = 1,
-                            Url = "#"
-                        });
                 });
 
             modelBuilder.Entity("DataLayer.ModelDB.Transaction", b =>
@@ -1058,13 +967,6 @@ namespace DataLayer.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
