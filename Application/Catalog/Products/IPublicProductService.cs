@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViewModels.Catalog.Products;
+using ViewModels.Catalog.Productss;
 using ViewModels.CommonDTO;
 
 namespace Application.Catalog.Products
@@ -13,6 +14,6 @@ namespace Application.Catalog.Products
     {
         Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request);
 
-        Task<List<ProductViewModel>> GetAll();
+        Task<List<ProductViewModel>> GetAll(string languageId);
     }
 }
