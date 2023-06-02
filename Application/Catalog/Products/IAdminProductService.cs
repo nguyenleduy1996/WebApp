@@ -19,6 +19,7 @@ namespace Application.Catalog.Products
         Task<int> Delete(int ProductId);
         Task< List<ProductViewModel>> Getall();
         Task< PagedResult<ProductViewModel>> GetAllPaging(GetProductPaginRequest request);
+        Task<ProductViewModel> GetById(int productId, string languageId);
         Task<bool> UpdatePrice(int ProductId, decimal newPrice);
         Task AddViewcount(int productID);
         Task<bool> UpdateStock (int productId, int AddedQuantity);
