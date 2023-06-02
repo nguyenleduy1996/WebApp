@@ -78,7 +78,7 @@ namespace DataLayer.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "a130599d-d6d7-4719-8711-7fbb8d59771a",
+                            ConcurrencyStamp = "ee643d14-9107-441a-a26c-cc0015faee23",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -155,7 +155,7 @@ namespace DataLayer.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0323dccc-0e28-4a4a-8677-3e33cf86e9fa",
+                            ConcurrencyStamp = "416cbf32-7e4f-415e-9818-423c31f5a96a",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tedu.international@gmail.com",
                             EmailConfirmed = true,
@@ -164,7 +164,7 @@ namespace DataLayer.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "tedu.international@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHlY6k7jCEuebMMdXJ5Ppa1i6EjBNZ0i7I8cIsKFOZ9pAjZqjrz57QID5lImghgrXQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFpNxgu/u/XGyYGsbwKwcuxCbIAA5DAqD9QmQIqLpVZPe4ZQs4NV3vNxo4+OWpa/vA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -510,7 +510,7 @@ namespace DataLayer.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 4, 3, 22, 44, 41, 782, DateTimeKind.Local).AddTicks(3782),
+                            DateCreated = new DateTime(2023, 4, 23, 9, 43, 16, 802, DateTimeKind.Local).AddTicks(7405),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
