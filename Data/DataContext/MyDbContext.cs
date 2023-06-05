@@ -8,7 +8,7 @@ using System;
 
 namespace MyWebApiApp.Data
 {
-    public class MyDbContext: IdentityDbContext
+    public class MyDbContext: IdentityDbContext<AppUser, AppRole, Guid>
     {
         public MyDbContext(DbContextOptions options) : base(options) 
         { 
@@ -40,13 +40,15 @@ namespace MyWebApiApp.Data
             //
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
             modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId });
-            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
 
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
 
+        
+
             modelBuilder.Seed();
-            base.OnModelCreating(modelBuilder);
+           // base.OnModelCreating(modelBuilder);
         }
 
         #region DbSet
