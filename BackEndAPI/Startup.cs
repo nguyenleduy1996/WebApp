@@ -2,6 +2,8 @@ using Application.Catalog.Products;
 using Application.Common;
 using Application.System.Users;
 using DataLayer.ModelDB;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +23,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Utilities.Constants;
+using ViewModels.System.Users;
 
 namespace BackEndAPI
 {
@@ -45,7 +48,7 @@ namespace BackEndAPI
                 .AddEntityFrameworkStores<MyDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddControllers();
+           
 
        
 
@@ -60,6 +63,9 @@ namespace BackEndAPI
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
             services.AddTransient<IUserService, UserService>();
 
+            services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
+
+            services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger eShop Solution", Version = "v1" });
