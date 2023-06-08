@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\user-content\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
