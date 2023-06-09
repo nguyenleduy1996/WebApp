@@ -14,9 +14,9 @@ namespace BackEndAPI.Controllers
     [Authorize]
     public class ProductsController : ControllerBase
     {
-        private readonly IPublicProductService _publicProductService;
-        private readonly IAdminProductService _adminProductService;
-        public ProductsController(IPublicProductService publicProductService, IAdminProductService adminProductService)
+        private readonly IProductService _publicProductService;
+        private readonly IProductService _adminProductService;
+        public ProductsController(IProductService publicProductService, IProductService adminProductService)
         {
             _publicProductService = publicProductService;
             _adminProductService = adminProductService;
