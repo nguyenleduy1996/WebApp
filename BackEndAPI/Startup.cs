@@ -55,8 +55,8 @@ namespace BackEndAPI
             //Declare DI
             services.AddTransient<IStorageService, FileStorageService>();
 
-            services.AddTransient<IPublicProductService, PublicProductService>();
-            services.AddTransient<IAdminProductService, AdminProductService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProductService, ProductService>();
 
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();

@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using ViewModels.Catalog.Products;
 using ViewModels.Catalog.Products.ProductImages;
+using ViewModels.Catalog.Productss;
 using ViewModels.CommonDTO;
 
 namespace Application.Catalog.Products
 {
-    public interface IAdminProductService
+    public interface IProductService
     {
         Task <int> Create(ProductCreateRequest request);
 
@@ -30,6 +31,8 @@ namespace Application.Catalog.Products
         Task<ProductImageViewModel> GetImageById(int imageId);
 
         Task<List<ProductImageViewModel>> GetListImages(int productId);
+
+        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
 
 
     }
