@@ -12,6 +12,6 @@ namespace Application.System.Users
     {
         Task<string> Authencate(LoginRequest requset);
         Task<bool> Register(RegisterRequest request);
-        Task<PagedResult<UserVm>> GetUsersPaging(GetUserPagingRequest request);
+        Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request);
      }
 }

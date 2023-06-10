@@ -34,7 +34,7 @@ namespace Web_admin.Service
             return token;
         }
 
-        public async Task<PagedResult<UserVm>> GetUsersPagings(GetUserPagingRequest request)
+        public async Task<ApiResult<PagedResult<UserVm>>> GetUsersPagings(GetUserPagingRequest request)
         {
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri(_configuration["BaseAddress"]);
@@ -42,8 +42,8 @@ namespace Web_admin.Service
             var response = await client.GetAsync($"/api/users/paging?pageIndex=" +
                 $"{request.PageIndex}&pageSize={request.PageSize}&keyword={request.Keyword}");
             var body = await response.Content.ReadAsStringAsync();
-            var users = JsonConvert.DeserializeObject<PagedResult<UserVm>>(body);
-            return users;
+            var result = JsonConvert.DeserializeObject<ApiResult<PagedResult<UserVm>>>(body);
+            return result;
         }
 
         public async Task<bool> RegisterUser(RegisterRequest registerRequest)
