@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Threading.Tasks;
 using ViewModels.CommonDTO;
 using ViewModels.System.Users;
@@ -7,9 +8,14 @@ namespace Web_admin.Service
 {
     public interface IUserApiClient
     {
-        Task<string> Authenticate(LoginRequest request);
-        Task<PagedResult<UserVm>> GetUsersPagings(GetUserPagingRequest request);
+        Task<ApiResult<string>> Authenticate(LoginRequest request);
 
-        Task<bool> RegisterUser(RegisterRequest registerRequest);
+        Task<ApiResult<PagedResult<UserVm>>> GetUsersPagings(GetUserPagingRequest request);
+
+        Task<ApiResult<bool>> RegisterUser(RegisterRequest registerRequest);
+
+        Task<ApiResult<bool>> UpdateUser(Guid id, UserUpdateRequest request);
+
+        Task<ApiResult<UserVm>> GetById(Guid id);
     }
 }
