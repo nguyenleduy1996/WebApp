@@ -10,6 +10,7 @@ namespace BackEndAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -49,6 +50,7 @@ namespace BackEndAPI.Controllers
             }
             return Ok(result);
         }
+
         //PUT: http://localhost/api/users/id
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] UserUpdateRequest request)
@@ -64,12 +66,19 @@ namespace BackEndAPI.Controllers
             return Ok(result);
         }
 
-        // http://localhost/api/users/paging?pageIndex=1&pageSize=10&keyword=
+        //http://localhost/api/users/paging?pageIndex=1&pageSize=10&keyword=
         [HttpGet("paging")]
         public async Task<IActionResult> GetAllPaging([FromQuery] GetUserPagingRequest request)
         {
             var products = await _userService.GetUsersPaging(request);
             return Ok(products);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var user = await _userService.GetById(id);
+            return Ok(user);
         }
     }
 }

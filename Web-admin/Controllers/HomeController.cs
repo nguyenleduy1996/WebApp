@@ -10,8 +10,8 @@ using Web_admin.Models;
 
 namespace Web_admin.Controllers
 {
-    [Authorize]
-    public class HomeController : Controller
+ 
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
