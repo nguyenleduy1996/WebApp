@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ViewModels.CommonDTO
 {
-    public class PagingRequestBase 
+    public class ApiResult<T>
     {
-        public int PageIndex { get; set; }
-        public int PageSize { get; set; }
+        public bool IsSuccessed { get; set; }
+
+        public string Message { get; set; }
+
+        public T ResultObj { get; set; }
     }
 }
