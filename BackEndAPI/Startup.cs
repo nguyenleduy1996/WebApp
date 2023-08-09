@@ -1,5 +1,6 @@
 using Application.Catalog.Products;
 using Application.Common;
+using Application.System.Roles;
 using Application.System.Users;
 using DataLayer.ModelDB;
 using FluentValidation;
@@ -48,22 +49,21 @@ namespace BackEndAPI
                 .AddEntityFrameworkStores<MyDbContext>()
                 .AddDefaultTokenProviders();
 
-           
 
-       
+
+
 
             //Declare DI
             services.AddTransient<IStorageService, FileStorageService>();
 
             services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IProductService, ProductService>();
-
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
 
-            services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
+            //services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
 
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
             services.AddSwaggerGen(c =>

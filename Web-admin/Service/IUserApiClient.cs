@@ -19,5 +19,7 @@ namespace Web_admin.Service
         Task<ApiResult<UserVm>> GetById(Guid id);
 
         Task<ApiResult<bool>> Delete(Guid id);
+
+        Task<ApiResult<bool>> RoleAssign(Guid id, RoleAssignRequest request);
     }
 }
