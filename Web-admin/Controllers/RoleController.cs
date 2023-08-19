@@ -18,13 +18,13 @@ using ViewModels.CommonDTO;
 namespace Web_admin.Controllers
 {
 
-    public class UserController : BaseController
+    public class RoleController : BaseController
     {
         private readonly IUserApiClient _userApiClient;
         private readonly IConfiguration _configuration;
         private readonly IRoleApiClient _roleApiClient;
 
-        public UserController(IUserApiClient userApiClient, IConfiguration configuration, IRoleApiClient roleApiClient)
+        public RoleController(IUserApiClient userApiClient, IConfiguration configuration, IRoleApiClient roleApiClient)
         {
             _userApiClient = userApiClient;
             _configuration = configuration;
@@ -33,7 +33,6 @@ namespace Web_admin.Controllers
 
         public async Task<IActionResult> Index(string keyword, int pageIndex = 1, int pageSize = 10)
         {
-            var a = User.Identity.Name;
             var request = new GetUserPagingRequest()
             {
                 Keyword = keyword,

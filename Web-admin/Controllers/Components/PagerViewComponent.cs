@@ -10,5 +10,14 @@ namespace Web_admin.Controllers.Components
         {
             return Task.FromResult((IViewComponentResult)View("_Default", result));
         }
+
+    }
+    public class Grid : ViewComponent
+    {
+        public Task<IViewComponentResult> InvokeAsync(PagedResultBase result)
+        {
+            return Task.FromResult((IViewComponentResult)View("_AnotherDefault", result));
+        }
+
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Application.System.Users;
+using DataLayer.ModelDB;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -13,11 +15,13 @@ namespace BackEndAPI.Controllers
     [Authorize]
     public class UsersController : ControllerBase
     {
+        private readonly UserManager<AppUser> _userManager;
         private readonly IUserService _userService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, UserManager<AppUser> userManager)
         {
             _userService = userService;
+            _userManager = userManager;
         }
 
         [HttpPost("authenticate")]
@@ -85,6 +89,7 @@ namespace BackEndAPI.Controllers
         [HttpGet("paging")]
         public async Task<IActionResult> GetAllPaging([FromQuery] GetUserPagingRequest request)
         {
+            var a = User.Identity.Name;
             var products = await _userService.GetUsersPaging(request);
             return Ok(products);
         }

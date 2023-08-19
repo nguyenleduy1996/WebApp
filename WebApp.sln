@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{F67081CE-0C37-4A50-967E-B1A64A508F3F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "Data\DataLayer.csproj", "{99F25584-CE71-49E9-8329-D222452B9A1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModels", "ApplicationLogic\ViewModels.csproj", "{0079C8F7-21FC-43CC-975E-0BA4D18F6174}"
@@ -21,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Host", "3. Host", "{E755ADA8-505E-4062-9968-D651EAE295D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web-admin", "Web-admin\Web-admin.csproj", "{EB80B0A2-E4A0-4937-AE9A-3F272A07F837}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web-admin", "Web-admin\Web-admin.csproj", "{EB80B0A2-E4A0-4937-AE9A-3F272A07F837}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F67081CE-0C37-4A50-967E-B1A64A508F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F67081CE-0C37-4A50-967E-B1A64A508F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F67081CE-0C37-4A50-967E-B1A64A508F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F67081CE-0C37-4A50-967E-B1A64A508F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99F25584-CE71-49E9-8329-D222452B9A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99F25584-CE71-49E9-8329-D222452B9A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99F25584-CE71-49E9-8329-D222452B9A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,7 +56,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F67081CE-0C37-4A50-967E-B1A64A508F3F} = {E755ADA8-505E-4062-9968-D651EAE295D3}
 		{99F25584-CE71-49E9-8329-D222452B9A1A} = {9E8875AF-50C5-4357-8DA0-1869DF97B3EC}
 		{0079C8F7-21FC-43CC-975E-0BA4D18F6174} = {0E4E7672-96C6-4210-8BC6-95948EE29892}
 		{482C1BA4-5CBA-49D8-B0AA-98D149C2FFFF} = {9E8875AF-50C5-4357-8DA0-1869DF97B3EC}

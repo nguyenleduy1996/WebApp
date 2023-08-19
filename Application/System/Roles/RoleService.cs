@@ -1,6 +1,7 @@
 ﻿using DataLayer.ModelDB;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Application.System.Roles
     public class RoleService : IRoleService
     {
         private readonly RoleManager<AppRole> _roleManager;
+        private readonly ILogger<RoleService> _logger;
         public RoleService(RoleManager<AppRole> roleManager) 
         { 
             _roleManager = roleManager; 

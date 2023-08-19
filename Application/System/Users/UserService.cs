@@ -1,5 +1,6 @@
 ﻿using Application.Common;
 using DataLayer.ModelDB;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +39,7 @@ namespace Application.System.Users
 
         public async Task<ApiResult<string>> Authencate(LoginRequest request)
         {
+          
             var user = await _userManager.FindByNameAsync(request.UserName);
             if (user == null)  return new ApiErrorResult<string>("Tài khoản không tồn tại");
 
@@ -91,6 +93,8 @@ namespace Application.System.Users
 
         public async Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request)
         {
+
+            
             var query = _userManager.Users;
             if (!string.IsNullOrEmpty(request.Keyword))
             {
